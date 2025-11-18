@@ -1,0 +1,217 @@
+.player-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.player-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  border-color: #2E7D32;
+}
+
+.player-card.compact {
+  padding: 12px;
+  gap: 8px;
+}
+
+.player-card.inactive {
+  opacity: 0.6;
+  background: #f5f5f5;
+}
+
+.player-avatar {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.compact .avatar-circle {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.position-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.position-icon {
+  font-size: 12px;
+}
+
+.compact .position-badge {
+  width: 16px;
+  height: 16px;
+}
+
+.compact .position-icon {
+  font-size: 10px;
+}
+
+.player-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.player-name {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.compact .player-name {
+  font-size: 14px;
+}
+
+.position-name {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.rating-section {
+  margin-bottom: 8px;
+}
+
+.conflicts-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #FF5722;
+}
+
+.conflicts-icon {
+  font-size: 12px;
+}
+
+.player-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.active-toggle, .edit-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #f5f5f5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.active-toggle:hover, .edit-button:hover {
+  background: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.active-toggle.active {
+  background: #C8E6C9;
+}
+
+.active-toggle.inactive {
+  background: #FFCDD2;
+  position: relative;
+  z-index: 10; /* Ensure it's above the overlay */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.active-toggle.inactive:hover {
+  background: #EF9A9A;
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.edit-button {
+  background: #E3F2FD;
+  position: relative;
+  z-index: 10; /* Ensure it's above the overlay */
+}
+
+.edit-button:hover {
+  background: #BBDEFB;
+}
+
+.inactive-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 80px; /* Leave space for action buttons */
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #666;
+  backdrop-filter: blur(2px);
+  pointer-events: none; /* Allow clicking through to underlying elements */
+}
+
+/* RTL support for Hebrew text */
+[dir="rtl"] .player-card {
+  direction: rtl;
+}
+
+[dir="rtl"] .player-name {
+  text-align: right;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .player-card {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .avatar-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .player-name {
+    font-size: 14px;
+  }
+}

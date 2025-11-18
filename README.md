@@ -49,8 +49,8 @@ A professional web application for creating balanced soccer teams from a list of
 # Clone the repository
 git clone https://github.com/guysade/soccer-app.git
 
-# Navigate to the app directory
-cd soccer-team-maker
+# Navigate to the project directory
+cd soccer-app
 
 # Install dependencies
 npm install
@@ -94,7 +94,7 @@ All player data is automatically saved to your browser's localStorage, which mea
 ## Project Structure
 
 ```
-soccer-team-maker/
+soccer-app/
 ├── src/
 │   ├── components/     # Reusable UI components
 │   ├── pages/          # Main application pages
