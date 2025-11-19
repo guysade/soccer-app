@@ -3,7 +3,7 @@ echo Starting Soccer Team Maker...
 echo.
 
 REM Change to the project directory
-cd /d "C:\Users\guysa\Documents\Soccer-app\soccer-team-maker"
+cd /d "C:\Users\guysa\Documents\Soccer-team-maker"
 
 REM Start the development server in the background
 echo Starting development server...
